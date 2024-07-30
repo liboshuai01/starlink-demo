@@ -1,0 +1,21 @@
+server:
+  port: 15000
+
+knife4j:
+  enable: true
+  openapi:
+    title: excel演示相关文档
+    description: excel演示相关文档
+    email: liboshuai01@gmail.com
+    concat: liboshuaiwechat
+    url: https://liboshuai.com
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      excel:
+        group-name: excel
+        api-rule: package
+        api-rule-resources:
+          - com.liboshuai.starlink.demo.excel

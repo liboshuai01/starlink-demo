@@ -22,8 +22,8 @@ public class ExcelServiceImpl implements ExcelService {
     @Async("starlinkAsyncExecutor")
     public void writeDataToExcel() {
 
-        final int TOTAL_COUNT = 100000; // 总数据条数
-        final int SHEET_SIZE = 10000; // 每sheet写入的数据条数
+        final int TOTAL_COUNT = 10_000_000; // 总数据条数
+        final int SHEET_SIZE = 1_000_000; // 每sheet写入的数据条数
         final int BATCH_SIZE = 1_000; // 每次批量写入的数据条数
         final String filePath = "C:\\Users\\libos\\Desktop\\Users.xlsx"; // 写入的文件路径
 

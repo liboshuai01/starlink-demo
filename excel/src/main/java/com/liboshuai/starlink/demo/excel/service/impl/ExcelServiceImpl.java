@@ -3,12 +3,14 @@ package com.liboshuai.starlink.demo.excel.service.impl;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.write.metadata.WriteSheet;
+import com.liboshuai.starlink.demo.excel.common.utils.ExcelUtil;
 import com.liboshuai.starlink.demo.excel.pojo.dao.UserExcel;
 import com.liboshuai.starlink.demo.excel.service.ExcelService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -61,6 +63,11 @@ public class ExcelServiceImpl implements ExcelService {
             excelWriter.finish();
             log.info("所有数据已写入完毕，共计 {} 条数据", TOTAL_COUNT);
         }
+    }
+
+    @Override
+    public List<UserExcel> importExcel(InputStream inputStream, Class<UserExcel> userExcelClass) {
+        return ExcelUtil.importExcel(inputStream, userExcelClass);
     }
 
     private UserExcel generateUser(int id) {

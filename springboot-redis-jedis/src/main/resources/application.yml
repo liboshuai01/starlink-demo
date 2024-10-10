@@ -1,0 +1,17 @@
+server:
+  port: 15002
+
+spring:
+  redis:
+    nodes: 10.0.0.87:6480,10.0.0.87:6479,10.0.0.9:6480,10.0.0.9:6479,10.0.0.82:6480,10.0.0.82:6479
+    maxRedirects: 3
+    password: admin123456
+    timeout: 10000
+    maxIdle: 10
+    maxTotal: 300
+    maxWaitMillis: 300
+    minEvictableIdleTimeMillis: 300000
+    numTestsPerEvictionRun: 1024
+    timeBetweenEvictionRunsMillis: 30000
+    testOnBorrow: true
+    testWhileIdle: true
